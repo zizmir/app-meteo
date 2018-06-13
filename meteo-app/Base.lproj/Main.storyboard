@@ -16,14 +16,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="meteo_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KqY-Hd-w3b">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                             </mapView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Rbh-Ef-nKD">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                         </subviews>
@@ -51,15 +51,15 @@
             <objects>
                 <viewController id="jzi-gD-JXj" customClass="DetailsCoordinateViewController" customModule="meteo_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="crH-Ki-dbm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gRb-AF-zuZ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gRb-AF-zuZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="116" id="9tZ-Sc-EOH" customClass="HourlyCell" customModule="meteo_app" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HourlyCell" rowHeight="116" id="9tZ-Sc-EOH" customClass="HourlyCell" customModule="meteo_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="116"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9tZ-Sc-EOH" id="99u-Nb-bhK">
@@ -134,7 +134,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhk-GB-v0A">
-                                                    <rect key="frame" x="31" y="27.5" width="42" height="28"/>
+                                                    <rect key="frame" x="31" y="27.5" width="42" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -210,6 +210,7 @@
                                                 <constraint firstItem="Vld-bg-TWR" firstAttribute="top" secondItem="9Bn-Sg-IPO" secondAttribute="top" constant="16" id="MEY-Zb-DQu"/>
                                                 <constraint firstItem="Vld-bg-TWR" firstAttribute="leading" secondItem="9Bn-Sg-IPO" secondAttribute="leading" constant="16" id="Yrf-aR-ZVt"/>
                                                 <constraint firstItem="Lik-nS-gZe" firstAttribute="centerY" secondItem="9Bn-Sg-IPO" secondAttribute="centerY" id="Zdx-Zc-Cfx"/>
+                                                <constraint firstItem="hrK-1I-ih6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9Bn-Sg-IPO" secondAttribute="leading" constant="20" symbolic="YES" id="oel-mw-f5T"/>
                                                 <constraint firstItem="opG-92-2Tb" firstAttribute="leading" secondItem="hrK-1I-ih6" secondAttribute="trailing" constant="16" id="v1f-ZQ-QoI"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -260,14 +261,18 @@
                                                 <constraint firstAttribute="bottom" secondItem="e1b-B3-13O" secondAttribute="bottom" constant="16" id="5zi-cw-JQd"/>
                                                 <constraint firstItem="Hsv-zo-yrA" firstAttribute="top" secondItem="Vuu-Rk-lmV" secondAttribute="top" constant="16" id="9mZ-WB-5Gj"/>
                                                 <constraint firstItem="Kt3-Yq-aMM" firstAttribute="top" secondItem="Vuu-Rk-lmV" secondAttribute="top" constant="16" id="DGM-Gx-5vT"/>
+                                                <constraint firstItem="Kt3-Yq-aMM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Vuu-Rk-lmV" secondAttribute="leading" constant="20" symbolic="YES" id="Dp7-QR-Swo"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="e1b-B3-13O" secondAttribute="trailing" constant="20" symbolic="YES" id="Euh-Sz-IcM"/>
                                                 <constraint firstItem="TfL-tG-Kwb" firstAttribute="top" secondItem="Kt3-Yq-aMM" secondAttribute="bottom" constant="16" id="FsX-bA-4es"/>
                                                 <constraint firstItem="Hsv-zo-yrA" firstAttribute="baseline" secondItem="Kt3-Yq-aMM" secondAttribute="baseline" id="Npw-mO-FLX"/>
                                                 <constraint firstItem="e1b-B3-13O" firstAttribute="top" secondItem="Hsv-zo-yrA" secondAttribute="bottom" constant="16" id="XS8-aq-b6w"/>
                                                 <constraint firstAttribute="bottom" secondItem="TfL-tG-Kwb" secondAttribute="bottom" constant="16" id="cqZ-h8-zmR"/>
                                                 <constraint firstItem="e1b-B3-13O" firstAttribute="leading" secondItem="Vuu-Rk-lmV" secondAttribute="leading" constant="16" id="f9H-jt-LDX"/>
                                                 <constraint firstAttribute="trailing" secondItem="Kt3-Yq-aMM" secondAttribute="trailing" constant="16" id="hX3-5h-xHD"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Hsv-zo-yrA" secondAttribute="trailing" constant="20" symbolic="YES" id="j6r-0R-j8p"/>
                                                 <constraint firstItem="Hsv-zo-yrA" firstAttribute="leading" secondItem="Vuu-Rk-lmV" secondAttribute="leading" constant="16" id="jSR-Zx-wtP"/>
                                                 <constraint firstAttribute="trailing" secondItem="TfL-tG-Kwb" secondAttribute="trailing" constant="16" id="pdW-2L-aQL"/>
+                                                <constraint firstItem="TfL-tG-Kwb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Vuu-Rk-lmV" secondAttribute="leading" constant="20" symbolic="YES" id="sNY-Xc-Rn3"/>
                                                 <constraint firstAttribute="trailing" secondItem="TfL-tG-Kwb" secondAttribute="trailing" constant="16" id="t6u-7w-QFl"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -295,10 +300,11 @@
         <scene sceneID="Yy0-Lh-vMN">
             <objects>
                 <navigationController id="hzf-Fu-7z9" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bty-et-k1D">
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="bty-et-k1D">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.93112666472754591" blue="0.43788981563899365" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="1" green="0.93112666470000005" blue="0.43788981560000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="DXY-Cf-O35"/>

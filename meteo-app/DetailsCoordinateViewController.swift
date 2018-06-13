@@ -17,15 +17,12 @@ class DetailsCoordinateViewController: UIViewController , UITableViewDataSource,
         
         super.viewDidLoad()
         self.title = city.name
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 44
+//        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.estimatedRowHeight = 44
         tableView.dataSource = self
         loadDataWeather()
     }
  
-
-
-    //341cee62af3a5634d13fbec19ab47ea1
     func loadDataWeather(){
         let latitude = city.coordinates.latitude
         let longitude = city.coordinates.longitude
@@ -80,7 +77,7 @@ class DetailsCoordinateViewController: UIViewController , UITableViewDataSource,
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0 :
-            let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath) as! HourlyCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HourlyCell", for: indexPath) as! HourlyCell
             cell.configure( city.currentSummary , city.temperature  , city.urlIconWheather)
             return cell
         case 1 :
@@ -94,11 +91,7 @@ class DetailsCoordinateViewController: UIViewController , UITableViewDataSource,
             return cell
             
         case 3 :
-        
-           
             let cell = tableView.dequeueReusableCell(withIdentifier: "ExtraInformationCell", for: indexPath) as! ExtraInformationCell
-            
-            
             cell.configure( city.tupleExtraInformations[indexPath.row])
             
             return cell
@@ -106,13 +99,26 @@ class DetailsCoordinateViewController: UIViewController , UITableViewDataSource,
             return UITableViewCell()
         }
     }
-    
+
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        switch <#value#> {
-//        case :
-//            <#code#>
+//        switch section {
+//        case 0 :
+//
+//            return cell
+//        case 1 :
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "HourlyforecastCell") as! HourlyforecastCell
+//
+//            return cell
+//        case 2 :
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "DailyforecastCell") as! DailyforecastCell
+//            return cell
+//
+//        case 3 :
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "ExtraInformationCell") as! ExtraInformationCell
+//
+//            return cell
 //        default:
-//            <#code#>
+//            return UITableViewCell()
 //        }
 //    }
 }

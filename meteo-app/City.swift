@@ -19,17 +19,21 @@ class City: NSObject {
     var dailyForecast:String = ""
     var tupleHourly:[(Int,String,Float, Float)] = []
     var tupleDaily:[(Int,String,Float, Float)] = []
+    
     var tupleExtraInformations: [(Int , String , Int , String )] = []
     
     init( name : String ,  coordinates : CLLocationCoordinate2D) {
         self.name = name
         self.coordinates = coordinates
     }
-
+    func floatToPourcent(_ value : Float) -> Int{
+        return Int(value * 100)
+    }
     func update( _ json : JSON ){
         let currently = json["currently"]
         let hourly = json["hourly"]
         let daily = json["daily"]
+        
         self.urlIconWheather = currently["icon"].stringValue
         self.temperature = currently["temperature"].floatValue
         self.currentSummary = currently["summary"].stringValue
@@ -37,8 +41,19 @@ class City: NSObject {
 
         self.hourlyForecast = hourly["summary"].stringValue
         self.dailyForecast = daily["summary"].stringValue
-        self.tupleExtraInformations.append((Int(currently["humidity"].floatValue * 100 ) , "Humidity", Int(currently["windSpeed"].floatValue), "Wind speed"))
-        self.tupleExtraInformations.append(( currently["pressure"].intValue, "Pressure" ,currently["uvIndex"].intValue , "UV Index"))
+        
+        self.tupleExtraInformations.append(
+            (floatToPourcent(currently["humidity"].floatValue) , "Humidity",
+             Int(currently["windSpeed"].floatValue), "Wind speed")
+        )
+        
+        
+        self.tupleExtraInformations.append(
+            ( currently["pressure"].intValue, "Pressure" ,
+              currently["uvIndex"].intValue , "UV Index")
+        )
+        
+        
 
         for index in hourly["data"].arrayValue {
             
