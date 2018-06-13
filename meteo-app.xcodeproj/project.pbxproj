@@ -21,6 +21,7 @@
 		98A2384220CD39E000D886C2 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2384120CD39E000D886C2 /* City.swift */; };
 		98A2384420CD50EB00D886C2 /* DetailsCoordinateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2384320CD50EB00D886C2 /* DetailsCoordinateViewController.swift */; };
 		98C770AF20D177B80062DD8A /* paysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C770AE20D177B80062DD8A /* paysCell.swift */; };
+		98C770B120D185970062DD8A /* DetailsLocationPaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C770B020D185970062DD8A /* DetailsLocationPaysViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		98A2384120CD39E000D886C2 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		98A2384320CD50EB00D886C2 /* DetailsCoordinateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCoordinateViewController.swift; sourceTree = "<group>"; };
 		98C770AE20D177B80062DD8A /* paysCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paysCell.swift; sourceTree = "<group>"; };
+		98C770B020D185970062DD8A /* DetailsLocationPaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsLocationPaysViewController.swift; sourceTree = "<group>"; };
 		F3CB3D2AF8EB5144FD1532A7 /* Pods-meteo-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meteo-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-meteo-app/Pods-meteo-app.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 				98A2383F20CD398000D886C2 /* CitiesData.swift */,
 				98A2384120CD39E000D886C2 /* City.swift */,
 				98A2384320CD50EB00D886C2 /* DetailsCoordinateViewController.swift */,
+				98C770B020D185970062DD8A /* DetailsLocationPaysViewController.swift */,
 			);
 			path = "meteo-app";
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98C770B120D185970062DD8A /* DetailsLocationPaysViewController.swift in Sources */,
 				98A2383020CD344D00D886C2 /* ViewController.swift in Sources */,
 				98A2382E20CD344D00D886C2 /* AppDelegate.swift in Sources */,
 				98C770AF20D177B80062DD8A /* paysCell.swift in Sources */,

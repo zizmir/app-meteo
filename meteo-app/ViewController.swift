@@ -14,15 +14,22 @@ class ViewController: UIViewController , MKMapViewDelegate , UITableViewDataSour
     @IBOutlet var mapView : MKMapView!
     var currentCity: City?
     @IBOutlet var tableView : UITableView!
-    
+    @IBAction func showListPays() {
+        if tableView.isHidden {
+            tableView.isHidden = false
+        } else {
+            tableView.isHidden = true
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         mapView.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         tableView.dataSource = self
-        var coordinates: [CLLocationCoordinate2D] = []
         
+        var coordinates: [CLLocationCoordinate2D] = []
+        tableView.isHidden = false
         for city in CitiesData.list {
             coordinates.append(city.coordinates)
         }
@@ -58,8 +65,9 @@ class ViewController: UIViewController , MKMapViewDelegate , UITableViewDataSour
         return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath) as! 
-        cell.configure( city.tupleExtraInformations[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "paysCell", for: indexPath) as! paysCell
+        cell.configure( CitiesData.list[indexPath.row].name )
+        return cell
     }
 }
 

@@ -10,12 +10,11 @@ import UIKit
 
 class paysCell: UITableViewCell {
 
-    @IBOutlet var paysText : UILabel!
+    @IBOutlet var PaysText : UILabel!
 
     
-    init(_ pays: String) {
-        self.pays = pays
+    func configure(_ pays: String) {
+        PaysText.text = pays
     }
-
-
+    
 }
