@@ -10,16 +10,17 @@ import UIKit
 
 import MapKit
 
-class ViewController: UIViewController , MKMapViewDelegate{
+class ViewController: UIViewController , MKMapViewDelegate , UITableViewDataSource , UITableViewDelegate {
     @IBOutlet var mapView : MKMapView!
     var currentCity: City?
+    @IBOutlet var tableView : UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         mapView.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
-        
+        tableView.dataSource = self
         var coordinates: [CLLocationCoordinate2D] = []
         
         for city in CitiesData.list {
@@ -50,6 +51,15 @@ class ViewController: UIViewController , MKMapViewDelegate{
 
 
     }
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return CitiesData.list.count
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath) as! 
+        cell.configure( city.tupleExtraInformations[indexPath.row])
+    }
 }
 
