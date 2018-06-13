@@ -22,7 +22,7 @@ class HourlyforecastCell: UITableViewCell {
         
         icon.image = UIImage(named : "\(hourlyForecast.1)")
         humidity.text = "\(hourlyForecast.2) %"
-        temperature.text = "\( hourlyForecast.3.rounded()) C°"
+        temperature.text = "\( Int(hourlyForecast.3.rounded())) C°"
     }
 
 }

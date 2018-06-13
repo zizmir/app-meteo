@@ -16,8 +16,7 @@ class HourlyCell: UITableViewCell {
     
     func configure( _ hourlyForecast : String , _ dailyForecast:Float , _ picture:String ){
         hourlyForecastText.text = hourlyForecast
-        DailyForecastText.text = "\(dailyForecast) C°"
-        print(picture)
+        DailyForecastText.text = "\(Int(dailyForecast)) C°"
         icon.image = UIImage(named : "\(picture)")
     }
 

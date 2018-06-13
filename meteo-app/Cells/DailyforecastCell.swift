@@ -23,8 +23,8 @@ class DailyforecastCell: UITableViewCell {
         time.text = "\(dayInWeek)"
         
         icon.image = UIImage(named : "\(dailyforecast.1)")
-        temperatureMin.text = "\(dailyforecast.2.rounded()) C°"
-        temperatureMax.text = "\( dailyforecast.3.rounded()) C°"
+        temperatureMin.text = "\(Int(dailyforecast.2.rounded())) C°"
+        temperatureMax.text = "\( Int(dailyforecast.3.rounded())) C°"
     }
 
 }

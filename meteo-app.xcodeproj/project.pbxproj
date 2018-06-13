@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		56B27BB59F74EE9AA4AB569D /* Pods_meteo_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78695DF0603A9E49799B9D3C /* Pods_meteo_app.framework */; };
 		9852FFA620CFD43C003892D2 /* DailyforecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9852FFA520CFD43C003892D2 /* DailyforecastCell.swift */; };
+		9852FFD620D026A6003892D2 /* ExtraInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9852FFD520D026A6003892D2 /* ExtraInformationCell.swift */; };
 		98788F4C20CED40A000CB520 /* HourlyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98788F4B20CED40A000CB520 /* HourlyCell.swift */; };
 		98788F4E20CED9A1000CB520 /* HourlyforecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98788F4D20CED9A1000CB520 /* HourlyforecastCell.swift */; };
 		98A2382E20CD344D00D886C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2382D20CD344D00D886C2 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 		450AA9AD9AD4265B4550689C /* Pods-meteo-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meteo-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-meteo-app/Pods-meteo-app.release.xcconfig"; sourceTree = "<group>"; };
 		78695DF0603A9E49799B9D3C /* Pods_meteo_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_meteo_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9852FFA520CFD43C003892D2 /* DailyforecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyforecastCell.swift; sourceTree = "<group>"; };
+		9852FFD520D026A6003892D2 /* ExtraInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraInformationCell.swift; sourceTree = "<group>"; };
 		98788F4B20CED40A000CB520 /* HourlyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyCell.swift; sourceTree = "<group>"; };
 		98788F4D20CED9A1000CB520 /* HourlyforecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyforecastCell.swift; sourceTree = "<group>"; };
 		98A2382A20CD344D00D886C2 /* meteo-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "meteo-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +68,7 @@
 				98788F4B20CED40A000CB520 /* HourlyCell.swift */,
 				98788F4D20CED9A1000CB520 /* HourlyforecastCell.swift */,
 				9852FFA520CFD43C003892D2 /* DailyforecastCell.swift */,
+				9852FFD520D026A6003892D2 /* ExtraInformationCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				9852FFA620CFD43C003892D2 /* DailyforecastCell.swift in Sources */,
 				98A2384220CD39E000D886C2 /* City.swift in Sources */,
 				98788F4C20CED40A000CB520 /* HourlyCell.swift in Sources */,
+				9852FFD620D026A6003892D2 /* ExtraInformationCell.swift in Sources */,
 				98788F4E20CED9A1000CB520 /* HourlyforecastCell.swift in Sources */,
 				98A2384020CD398000D886C2 /* CitiesData.swift in Sources */,
 			);

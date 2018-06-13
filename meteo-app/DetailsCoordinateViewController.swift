@@ -10,18 +10,21 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class DetailsCoordinateViewController: UIViewController , UITableViewDataSource  {
+class DetailsCoordinateViewController: UIViewController , UITableViewDataSource, UITableViewDelegate  {
     var city:City!
     @IBOutlet var tableView : UITableView!
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         self.title = city.name
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 44
         tableView.dataSource = self
         loadDataWeather()
     }
-    
+ 
+
+
     //341cee62af3a5634d13fbec19ab47ea1
     func loadDataWeather(){
         let latitude = city.coordinates.latitude
@@ -40,7 +43,7 @@ class DetailsCoordinateViewController: UIViewController , UITableViewDataSource 
         }
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
@@ -48,11 +51,14 @@ class DetailsCoordinateViewController: UIViewController , UITableViewDataSource 
             return city.hourlyForecast
         case 2:
             return city.dailyForecast
+        case 3:
+            return "Extra informations"
         default:
             return nil
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      
         switch section {
         case 0 :
             return 1
@@ -63,7 +69,7 @@ class DetailsCoordinateViewController: UIViewController , UITableViewDataSource 
             return city.tupleDaily.count
             
         case 3 :
-            return 6
+            return city.tupleExtraInformations.count
             
         default:
             return 0
@@ -85,12 +91,28 @@ class DetailsCoordinateViewController: UIViewController , UITableViewDataSource 
         case 2 :
             let cell = tableView.dequeueReusableCell(withIdentifier: "DailyforecastCell", for: indexPath) as! DailyforecastCell
             cell.configure( city.tupleDaily[indexPath.row])
-
+            return cell
+            
+        case 3 :
+        
+           
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ExtraInformationCell", for: indexPath) as! ExtraInformationCell
+            
+            
+            cell.configure( city.tupleExtraInformations[indexPath.row])
             
             return cell
-
         default:
             return UITableViewCell()
         }
     }
+    
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        switch <#value#> {
+//        case :
+//            <#code#>
+//        default:
+//            <#code#>
+//        }
+//    }
 }

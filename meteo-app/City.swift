@@ -15,19 +15,17 @@ class City: NSObject {
     var urlIconWheather:String = ""
     var temperature:Float = 0
     var currentSummary:String = ""
-    var strengtHOfWild:Int = 0
-    var pressure:Float = 0
-    var moisture:Float = 0
-    var uvIndex:Int = 0
     var hourlyForecast:String = ""
     var dailyForecast:String = ""
     var tupleHourly:[(Int,String,Float, Float)] = []
     var tupleDaily:[(Int,String,Float, Float)] = []
+    var tupleExtraInformations: [(Int , String , Int , String )] = []
     
     init( name : String ,  coordinates : CLLocationCoordinate2D) {
         self.name = name
         self.coordinates = coordinates
     }
+
     func update( _ json : JSON ){
         let currently = json["currently"]
         let hourly = json["hourly"]
@@ -35,14 +33,12 @@ class City: NSObject {
         self.urlIconWheather = currently["icon"].stringValue
         self.temperature = currently["temperature"].floatValue
         self.currentSummary = currently["summary"].stringValue
-        self.strengtHOfWild = currently["windSpeed"].intValue
-        self.pressure = currently["pressure"].floatValue
-        self.moisture = currently["humidity"].floatValue
-        self.uvIndex = currently["uvIndex"].intValue
-        self.hourlyForecast = hourly["summary"].stringValue
         
+
+        self.hourlyForecast = hourly["summary"].stringValue
         self.dailyForecast = daily["summary"].stringValue
-      
+        self.tupleExtraInformations.append((Int(currently["humidity"].floatValue * 100 ) , "Humidity", Int(currently["windSpeed"].floatValue), "Wind speed"))
+        self.tupleExtraInformations.append(( currently["pressure"].intValue, "Pressure" ,currently["uvIndex"].intValue , "UV Index"))
 
         for index in hourly["data"].arrayValue {
             
